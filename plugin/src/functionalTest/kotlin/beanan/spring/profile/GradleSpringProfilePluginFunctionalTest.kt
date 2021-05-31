@@ -3,8 +3,8 @@
  */
 package beanan.spring.profile
 
-import java.io.File
 import org.gradle.testkit.runner.GradleRunner
+import java.io.File
 import kotlin.test.Test
 import kotlin.test.assertTrue
 
@@ -16,10 +16,11 @@ class GradleSpringProfilePluginFunctionalTest {
         // Setup the test build
         val projectDir = File("build/functionalTest")
         projectDir.mkdirs()
-        projectDir.resolve("settings.gradle").writeText("")
-        projectDir.resolve("build.gradle").writeText("""
+        projectDir.resolve("settings.gradle.kts").writeText("")
+        projectDir.resolve("build.gradle.kts").writeText("""
             plugins {
-                id('beanan.spring.profile.greeting')
+                java
+                id("beanan.spring.profile.greeting")
             }
         """)
 
@@ -27,11 +28,13 @@ class GradleSpringProfilePluginFunctionalTest {
         val runner = GradleRunner.create()
         runner.forwardOutput()
         runner.withPluginClasspath()
-        runner.withArguments("greeting")
+        runner.withArguments("clean", "build")
         runner.withProjectDir(projectDir)
         val result = runner.build();
 
         // Verify the result
-        assertTrue(result.output.contains("Hello from plugin 'beanan.spring.profile.greeting'"))
+//        assertTrue(result.output.contains("Hello from plugin 'beanan.spring.profile.greeting'"))
+        assertTrue(result.output.contains("start match"))
+
     }
 }

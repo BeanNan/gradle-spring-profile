@@ -11,7 +11,7 @@ import kotlin.test.assertNotNull
  * A simple unit test for the 'beanan.spring.profile.greeting' plugin.
  */
 class GradleSpringProfilePluginTest {
-    @Test fun `plugin registers task`() {
+    @Test fun `plugin replace task`() {
         // Create a test project and apply the plugin
         val project = ProjectBuilder.builder().build()
         project.plugins.apply("beanan.spring.profile.greeting")
