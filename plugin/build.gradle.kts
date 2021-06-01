@@ -1,10 +1,18 @@
 plugins {
     `java-gradle-plugin`
+    id("maven-publish")
+    id("com.gradle.plugin-publish") version "0.14.0"
     id("org.jetbrains.kotlin.jvm") version "1.4.31"
 }
 
 repositories {
     mavenCentral()
+}
+
+pluginBundle {
+    website = "https://github.com/BeanNan/gradle-spring-profile"
+    vcsUrl = "https://github.com/BeanNan/gradle-spring-profile.git"
+    tags = listOf("Spring Boot")
 }
 
 dependencies {
@@ -19,6 +27,9 @@ gradlePlugin {
     val profile by plugins.creating {
         id = "beanan.spring.profile"
         implementationClass = "beanan.spring.profile.GradleSpringProfilePlugin"
+        displayName = "Like maven's profile replacement plugin"
+        description = "Like maven's profile replacement plugin"
+        version = "0.0.1"
     }
 }
 
