@@ -16,8 +16,8 @@ dependencies {
 
 gradlePlugin {
     // Define the plugin
-    val greeting by plugins.creating {
-        id = "beanan.spring.profile.greeting"
+    val profile by plugins.creating {
+        id = "beanan.spring.profile"
         implementationClass = "beanan.spring.profile.GradleSpringProfilePlugin"
     }
 }
@@ -25,6 +25,7 @@ gradlePlugin {
 // Add a source set for the functional test suite
 val functionalTestSourceSet = sourceSets.create("functionalTest") {
 }
+
 
 gradlePlugin.testSourceSets(functionalTestSourceSet)
 configurations["functionalTestImplementation"].extendsFrom(configurations["testImplementation"])
