@@ -26,13 +26,13 @@ dependencies {
 }
 
 gradlePlugin {
-    // Define the plugin
-    val profile by plugins.creating {
-        id = "com.github.aniaan.gradle-spring-profile"
-        implementationClass = "com.github.aniaan.spring.profile.GradleSpringProfilePlugin"
-        displayName = "Like maven's profile replacement plugin"
-        description = "Like maven's profile replacement plugin"
-        version = project.version
+    plugins {
+        create("profilePlugin") {
+            id = "com.github.aniaan.gradle-spring-profile"
+            implementationClass = "com.github.aniaan.spring.profile.GradleSpringProfilePlugin"
+            displayName = "Like maven's profile replacement plugin"
+            description = "Like maven's profile replacement plugin"
+        }
     }
 }
 
