@@ -10,8 +10,8 @@ repositories {
 }
 
 pluginBundle {
-    website = "https://github.com/BeanNan/gradle-spring-profile"
-    vcsUrl = "https://github.com/BeanNan/gradle-spring-profile.git"
+    website = "https://github.com/aniaan/gradle-spring-profile"
+    vcsUrl = "https://github.com/aniaan/gradle-spring-profile.git"
     tags = listOf("Spring Boot")
 }
 
@@ -25,11 +25,21 @@ dependencies {
 gradlePlugin {
     // Define the plugin
     val profile by plugins.creating {
-        id = "beanan.spring.profile"
-        implementationClass = "beanan.spring.profile.GradleSpringProfilePlugin"
+        id = "com.github.aniaan.gradle-spring-profile"
+        implementationClass = "com.github.aniaan.spring.profile.GradleSpringProfilePlugin"
         displayName = "Like maven's profile replacement plugin"
         description = "Like maven's profile replacement plugin"
-        version = "0.0.1"
+        version = "0.0.2"
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "github"
+            url = uri("https://maven.pkg.github.com/OWNER/gradle-spring-profile")
+            credentials(PasswordCredentials::class)
+        }
     }
 }
 

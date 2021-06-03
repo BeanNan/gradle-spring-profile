@@ -1,4 +1,4 @@
-package beanan.spring.profile
+package com.github.aniaan.spring.profile
 
 
 import org.gradle.testkit.runner.GradleRunner
@@ -52,7 +52,7 @@ class GradleSpringProfilePluginFunctionalTest {
             """
             plugins {
                 java
-                id("beanan.spring.profile")
+                id("com.github.aniaan.gradle-spring-profile")
             }
         """.trimIndent()
         )

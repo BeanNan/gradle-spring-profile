@@ -1,4 +1,4 @@
-package beanan.spring.profile
+package com.github.aniaan.spring.profile
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
