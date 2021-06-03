@@ -17,4 +17,4 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: upload
-        run: ./gradlew publishPlugins -Pusername=${{secrets.P_USERNAME}} -Ppassword=${{secrets.P_PASSWORD}}
+        run: ./gradlew clean publish -PgithubUsername=${{secrets.P_USERNAME}} -PgithubPassword=${{secrets.P_PASSWORD}}
