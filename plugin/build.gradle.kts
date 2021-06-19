@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.github.aniaan"
-version = "1.0.0-RELEASE"
+version = "1.0.1-RELEASE"
 
 repositories {
     mavenCentral()
@@ -32,24 +32,6 @@ gradlePlugin {
             implementationClass = "com.github.aniaan.spring.profile.GradleSpringProfilePlugin"
             displayName = "Like maven's profile replacement plugin"
             description = "Like maven's profile replacement plugin"
-        }
-    }
-}
-
-publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            groupId = project.group as String?
-            artifactId = "gradle-spring-profile"
-            version = project.version as String?
-            from(components["kotlin"])
-        }
-    }
-    repositories {
-        maven {
-            name = "github"
-            url = uri("https://maven.pkg.github.com/aniaan/gradle-spring-profile")
-            credentials(PasswordCredentials::class)
         }
     }
 }

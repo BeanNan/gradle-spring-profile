@@ -19,7 +19,7 @@ spring:
 
 ```kotlin
 plugins {
-    id("com.github.aniaan.gradle-spring-profile") 
+    id("com.github.aniaan.gradle-spring-profile") version "1.0.1-RELEASE"
 }
 ```
 
