@@ -17,4 +17,4 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
       - name: upload
-        run: ./gradlew clean publishMavenPublicationToGithubRepository -PgithubUsername=${{secrets.P_USERNAME}} -PgithubPassword=${{secrets.P_PASSWORD}}
+        run: ./gradlew clean publishPlugins -Pgradle.publish.key=${{secrets.P_USERNAME}} -Pgradle.publish.secret=${{secrets.P_PASSWORD}}
