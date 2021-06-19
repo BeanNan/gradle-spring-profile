@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.github.aniaan"
-version = "1.0.1-RELEASE"
+version = "1.1.0-RELEASE"
 
 repositories {
     mavenCentral()

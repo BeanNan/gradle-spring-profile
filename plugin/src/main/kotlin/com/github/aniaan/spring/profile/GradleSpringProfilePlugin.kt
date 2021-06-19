@@ -18,8 +18,8 @@ class GradleSpringProfilePlugin : Plugin<Project> {
                 val profile = getProfile(project = project)
                 println("${details.name}: start replace to $profile")
                 details.filter {
-                    if (it.contains("@spring.active@")) {
-                        it.replace("@spring.active@", profile)
+                    if (it.contains("\${spring.active}")) {
+                        it.replace("\${spring.active}", profile)
                     } else {
                         it
                     }

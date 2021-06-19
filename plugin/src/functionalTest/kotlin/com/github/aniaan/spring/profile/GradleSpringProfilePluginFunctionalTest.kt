@@ -26,24 +26,24 @@ class GradleSpringProfilePluginFunctionalTest {
         testProjectDir.newFolder("src", "main", "resources")
         testProjectDir.newFolder("src", "test", "resources")
 
+        val template = "\${spring.active}"
+
         testProjectDir.newFile("src/test/resources/application.yaml").writeText(
             """
             spring:
               profiles:
-                active: @spring.active@
+                active: $template
         """.trimIndent()
         )
         testProjectDir.newFile("src/test/resources/application.yml").writeText(
             """
             spring:
               profiles:
-                active: @spring.active@
+                active: $template
         """.trimIndent()
         )
         testProjectDir.newFile("src/test/resources/application.properties").writeText(
-            """
-            spring.profiles.active=@spring.active@
-        """.trimIndent()
+            "spring.profiles.active=$template"
         )
 
 
